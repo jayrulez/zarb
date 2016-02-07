@@ -1,3 +1,4 @@
+app/config/parameters.yml
 var/cache/dev
 var/cache/prod
 var/logs/dev.log
