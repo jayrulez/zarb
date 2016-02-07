@@ -1,0 +1,18 @@
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+report:
+    resource: "@ReportBundle/Controller/"
+    type:     annotation
+    prefix:   /report
+
+accounting:
+    resource: "@AccountingBundle/Controller/"
+    type:     annotation
+    prefix:   /accounting
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

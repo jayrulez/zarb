@@ -1,0 +1,12 @@
+{
+  "name": "zarb",
+  "version": "1.0.0",
+  "description": "zarb microfinance application",
+  "main": "index.html",
+  "author": "Robert Campbell",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.5.0",
+    "angular-route": "1.5.0"
+  }
+}

@@ -1,0 +1,25 @@
+parameters:
+#    parameter_name: value
+
+services:
+    token_authenticator:
+          class: CoreBundle\Security\TokenAuthenticator
+          arguments: ["@token_helper"]
+
+    token_helper:
+        class: CoreBundle\Service\TokenHelper
+        arguments: [%secret]
+
+    core.user_manager:
+        class: Doctrine\ORM\EntityManager
+        factory: ["@doctrine", getManagerForClass]
+        arguments: ["CoreBundle:User"]
+
+    core.user_repository:
+        class: CoreBundle\Repository\UserRepository
+        factory: ["@core.user_manager", getRepository]
+        arguments: ["CoreBundle:User"]
+
+    core.user_provider:
+        class: CoreBundle\Provider\UserProvider
+        arguments: ["@core.user_repository"]

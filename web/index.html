@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="app" lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/zarb/web/">
+  <title>{{ appName }}</title>
+</head>
+<body ng-controller="appController as ctrl">
+  <div ng-view></div>
+
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-route/angular-route.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/services/authService.js"></script>
+  <script src="app/services/authInterceptorService.js"></script>
+  <script src="app/controllers/default/home.js"></script>
+  <script src="app/controllers/auth/login.js"></script>
+</body>
+</html>

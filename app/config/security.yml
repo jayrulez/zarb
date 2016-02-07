@@ -1,0 +1,28 @@
+security:
+    encoders:
+        CoreBundle\Entity\User: plaintext
+    providers:
+        core:
+            id: core.user_provider
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        app_auth:
+            pattern: ^/auth
+            anonymous: true
+
+        app:
+            pattern: ^/
+            logout:
+                path:   /logout
+                target: /
+            guard:
+                authenticators:
+                    - token_authenticator
+
+    access_control:
+        - { path: ^/auth, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
+        - { path: ^/, roles: [ IS_AUTHENTICATED_FULLY ] }
